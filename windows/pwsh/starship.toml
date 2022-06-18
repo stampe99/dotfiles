@@ -1,20 +1,38 @@
-format = """
-[\uE0B6](fg:#1C4961)[$directory](bg:#1C4961)[\uE0B0](fg:#1C4961 bg:#2F79A1)$git_branch[\uE0B0](fg:#2F79A1 bg:#3A95C7)$git_status[\uE0B0](#3A95C7 bg:#40A9E0)$time[\uE0B0](#40A9E0 bg:none) $all$character """
+format = """$username $directory$cmd_duration $character"""
 
-add_newline = true
+# Padding between prompts
+add_newline = false
+
+# Set the standard characters to use in the prompt
+[character]
+success_symbol = "[->](bold purple)"
+error_symbol = "[<-](bold red)"
+
+# Prints how long you used a command for e.g opening vim for 2 seconds
+[cmd_duration]
+min_time = 1
+format = "🚀 [$duration](bold yellow)"
+disabled = false
+show_notifications = false
 
 [directory]
-style = "bg:#1C4961 fg:white"
+truncation_length = 7
+truncation_symbol = "…/"
 
-[git_branch]
-format = "[ $symbol$branch ]($style)"
-style = "bg:#2F79A1 fg:white"
-
-[git_status]
-format = "[ $all_status$ahead_behind ]($style)"
-style = "bg:#3A95C7 fg:white"
-
-[time]
+[username]
+style_user = "blue bold"
+style_root = "red bold"
+format = "[💻]($style)"
 disabled = false
-format = "[ $time ]($style)"
-style = "bg:#40A9E0 fg:white"
+show_always = true
+
+[hostname]
+ssh_only = false
+format = '@[$hostname](bold red) '
+trim_at = "."
+disabled = false
+
+[localip]
+ssh_only = false
+format = "@[$localipv4](bold red) "
+disabled = false
