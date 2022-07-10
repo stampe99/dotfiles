@@ -1,4 +1,4 @@
-Import-Module PsReadLine
+Import-Module PSReadLine
 
 # Start starship
 Invoke-Expression (&starship init powershell)
@@ -9,19 +9,23 @@ Set-Alias np notepad
 Set-Alias g git
 
 # Utilities
-
-Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
-Set-PSReadLineOption -PredictionSource History
-
 function welcomeMessage(){
     $Message = "Welcome, $env:UserName ($env:ComputerName)`n"
     Write-Host $Message
 }
 
+Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+Set-PSReadLineOption -PredictionSource History
+
 function setTitle(){
     # $env:ComputerName optionally for computer name in title
     $Title = "$env:UserName ~ pwsh"
     $host.UI.rawUI.WindowTitle = $Title
+}
+
+function which ($command) {
+    Get-Command -Name $command -ErrorAction SilentlyContinue |
+        Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
 }
 
 # Run functions
