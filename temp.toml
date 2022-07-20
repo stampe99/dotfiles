@@ -1,6 +1,5 @@
-```toml
 format = """
-┌─\\[[$username$hostname: $directory\\] $cmd_duration
+┌─\\[[$username$hostname: $directory\\] [$cmd_duration]($style) 
 └─$character
 """
 
@@ -55,4 +54,3 @@ style = "bold green"
 [nodejs]
 format = "via [$symbol$version]($style) "
 style = "bold green"
-```
