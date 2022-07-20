@@ -1,6 +1,6 @@
 format = """
 ┌─[$username$hostname: $directory] $cmd_duration
-└─>
+└─$character
 """
 
 # Padding between prompts
@@ -8,8 +8,8 @@ add_newline = false
 
 # Set the standard characters to use in the prompt
 [character]
-error_symbol = "[%](bold red)"
-success_symbol = "[%](bold grey)"
+error_symbol = "[➜](bold red)"
+success_symbol = "[➜](bold grey)"
 
 [directory]
 truncation_length = 1
