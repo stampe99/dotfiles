@@ -13,11 +13,11 @@ success_symbol = "[>](bold green)"
 
 [directory]
 truncation_length = 1
-truncation_symbol = "~"
+truncation_symbol = "˜"
 style = "bold green"
 read_only = "🔒 "
 read_only_style = "bold red"
-home_symbol = "~"
+home_symbol = "˜"
 
 # Prints how long you used a command for e.g opening vim for 2 seconds
 [cmd_duration]
