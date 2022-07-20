@@ -1,5 +1,6 @@
-format = """\
-┌─[$username$hostname: $directory] $cmd_duration
+```toml
+format = """
+┌─\\[[$username$hostname: $directory\\] $cmd_duration
 └─$character
 """
 
@@ -8,8 +9,8 @@ add_newline = false
 
 # Set the standard characters to use in the prompt
 [character]
-error_symbol = "[➜](bold red)"
-success_symbol = "[➜](bold grey)"
+error_symbol = "[>](bold red)"
+success_symbol = "[>](bold grey)"
 
 [directory]
 truncation_length = 1
@@ -54,3 +55,4 @@ style = "bold green"
 [nodejs]
 format = "via [$symbol$version]($style) "
 style = "bold green"
+```
