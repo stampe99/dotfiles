@@ -1,5 +1,5 @@
 format = """
-┌─\\[[$username$hostname: $directory\\]
+┌─\\[[$username@$hostname:$directory]($style)\\]
 └─$character
 """
 
@@ -9,11 +9,11 @@ add_newline = false
 # Set the standard characters to use in the prompt
 [character]
 error_symbol = "[>](bold red)"
-success_symbol = "[>](bold grey)"
+success_symbol = "[>](bold green)"
 
 [directory]
 truncation_length = 1
-truncation_symbol = "~ "
+truncation_symbol = "~"
 style = "bold green"
 read_only = "🔒 "
 read_only_style = "bold red"
@@ -35,7 +35,7 @@ symbol = " "
 style = "bold dimmed purple"
 
 [username]
-style_user = "grey bold"
+style_user = "blue bold"
 style_root = "red bold"
 format = "[$user]($style)"
 disabled = false
@@ -43,7 +43,7 @@ show_always = true
 
 [hostname]
 ssh_only = false
-format = '@[$hostname](bold grey) '
+format = '[$hostname](bold blue)'
 trim_at = "."
 disabled = false
 
