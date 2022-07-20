@@ -1,5 +1,5 @@
 format = """
-┌─\\[[$username$hostname: $directory\\] [$cmd_duration]($style) 
+┌─\\[[$username$hostname: $directory\\]
 └─$character
 """
 
