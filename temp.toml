@@ -24,7 +24,7 @@ home_symbol = "˜"
 # min_time = 1
 format = "[$duration](bold purple)"
 disabled = false
-show_notifications = false   
+show_notifications = false
 
 # Shows the memory usage of machine, ram and swap
 [memory_usage]
