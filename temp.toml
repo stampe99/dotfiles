@@ -1,56 +1,20 @@
-format = """
-┌─\\[[$username@$hostname:$directory]($style)\\]
-└─$character
+[  ](bg:#bfcfff fg:#474e66)\
+[$username]()\
+[]()\
+[]()\
+[$directory]()\
+[ ]()
 """
 
-# Padding between prompts
 add_newline = false
 
-# Set the standard characters to use in the prompt
-[character]
-error_symbol = "[>](bold red)"
-success_symbol = "[>](bold green)"
+[username]
+show_always = true
+style_user = "bg:#bfcfff fg:#474e66"
+format = "[$user ]($style)"
 
 [directory]
+style = "bg:#bfcfff fg:#474e66"
 truncation_length = 1
-truncation_symbol = "˜"
-style = "bold green"
-read_only = "🔒 "
-read_only_style = "bold red"
-home_symbol = "˜"
-
-# Prints how long you used a command for e.g opening vim for 2 seconds
-[cmd_duration]
-# min_time = 1
-format = "[$duration](bold purple)"
-disabled = false
-show_notifications = false
-
-# Shows the memory usage of machine, ram and swap
-[memory_usage]
-format = "~$symbol[${ram} ${ram_pct}( ~ ${swap} ${swap_pct})]($style)"
-disabled = false
-threshold = -1
-symbol = ""
-style = "bold dimmed purple"
-
-[username]
-style_user = "blue bold"
-style_root = "red bold"
-format = "[$user]($style)"
-disabled = false
-show_always = true
-
-[hostname]
-ssh_only = false
-format = '[$hostname](bold blue)'
-trim_at = "."
-disabled = false
-
-[python]
-format = "via [$symbol$version]($style)"
-style = "bold green"
-
-[nodejs]
-format = "via [$symbol$version]($style)"
-style = "bold green"
+truncation_symbol = ""
+format = "[ $path ]($style)" 
